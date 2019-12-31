@@ -1,0 +1,3 @@
+/home/dawid/CLionProjects/geneticAlgorithm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/dawid/CLionProjects/geneticAlgorithm/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir
+/home/dawid/CLionProjects/geneticAlgorithm/cmake-build-debug/CMakeFiles/edit_cache.dir
