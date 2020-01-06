@@ -6,7 +6,12 @@
 
 using namespace std;
 
-Chromosome:: Chromosome(std::vector<int> genes) : genes(genes){
+Chromosome:: Chromosome(std::vector<int> genes, const Matrix& matrix) : genes(genes){
+    calcValue(matrix);
+}
+
+bool Chromosome::operator<(const Chromosome &chromosome) const {
+    return _value < chromosome._value;
 }
 
 void Chromosome::calcValue(const Matrix& matrix){
@@ -22,11 +27,16 @@ void Chromosome::calcFitness(int factor) {
 }
 
 void Chromosome::printChromosome() const{
+    cout<<"Chromosom: ";
     for(int i=0; i<genes.size(); i++)
         cout<<genes[i]<<" ";
-    cout<<endl;
+    cout<<"Fitnes: "<<_value<<endl;
 }
 
-int Chromosome::fitness(){
+int Chromosome::fitness() const{
     return _fitness;
+}
+
+int Chromosome::value() const{
+    return _value;
 }

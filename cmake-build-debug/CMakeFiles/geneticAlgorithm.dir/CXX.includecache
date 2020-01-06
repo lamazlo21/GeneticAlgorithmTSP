@@ -14,10 +14,6 @@ iostream
 Matrix.h
 /home/dawid/CLionProjects/geneticAlgorithm/Matrix.h
 
-/home/dawid/CLionProjects/geneticAlgorithm/GeneticAlgorithm.cpp
-GeneticAlgorithm.h
-/home/dawid/CLionProjects/geneticAlgorithm/GeneticAlgorithm.h
-
 /home/dawid/CLionProjects/geneticAlgorithm/GeneticAlgorithm.h
 vector
 -
@@ -46,5 +42,17 @@ string
 fstream
 /home/dawid/CLionProjects/geneticAlgorithm/fstream
 iostream
+-
+
+/home/dawid/CLionProjects/geneticAlgorithm/main.cpp
+iostream
+-
+GeneticAlgorithm.h
+/home/dawid/CLionProjects/geneticAlgorithm/GeneticAlgorithm.h
+Matrix.h
+/home/dawid/CLionProjects/geneticAlgorithm/Matrix.h
+ctime
+-
+cstdlib
 -
 

@@ -8,52 +8,111 @@ using namespace::std;
 
 random_device rd;
 mt19937 generator(rd());
-uniform_real_distribution<double> distribution(0.0,1.0);
 
 Genetic::Genetic(const Matrix &matrix) : matrix(matrix){
 
 }
 
-bool Genetic::findInRange(Chromosome& first, Chromosome& second, int start, int end, int gene) const {
-    for(int i=start; i<=end; i++)
-        if(second.genes[gene] == first.genes[i])
-            return true;
-    return false;
+void Genetic::crossover(Chromosome& first, Chromosome& second) const {
+    uniform_int_distribution<int>  firstInt(1, first.genes.size() - 2);
+    int start = firstInt(generator);
+    uniform_int_distribution<int>  secondInt(start + 1, first.genes.size() - 1);
+    int end = secondInt(generator);
+    vector<int> firstChild, secondChild;
+    for(int i=0; i<first.genes.size(); i++) {
+        int firstGene = first.genes[i];
+        int secondGene = second.genes[i];
+        int firstCounter = 0, secondCounter = 0;
+        for (int j = start; j <= end; j++) {
+            if (firstGene == second.genes[j])
+                firstCounter++;
+            if (secondGene == first.genes[j])
+                secondCounter++;
+        }
+        if(firstCounter == 0)
+            firstChild.push_back(firstGene);
+        if(secondCounter == 0)
+            secondChild.push_back(secondGene);
+    }
+    firstChild.insert( firstChild.begin() + start, second.genes.begin() + start, second.genes.begin() + end + 1);
+    secondChild.insert( secondChild.begin() + start, first.genes.begin() + start, first.genes.begin() + end + 1);
+    first.genes = firstChild;
+    second.genes = secondChild;
 }
 
-void Genetic::initializePopulation(int size) {
+void Genetic::mutate(double mutationRate, Chromosome& chromosome) const{
+    uniform_int_distribution<int>  firstInt(1, chromosome.genes.size() - 2);
+    uniform_real_distribution<double> distribution(0.0,1.0);
+    double random = distribution(generator);
+    if(random <= mutationRate){
+        int start = firstInt(generator);
+        uniform_int_distribution<int>  secondInt(start + 1, chromosome.genes.size() - 1);
+        int end = secondInt(generator);
+        swap(chromosome.genes[start], chromosome.genes[end]);
+    }
+}
+
+void Genetic::initializePopulation(int populationSize, int chromosomeSize) {
     unsigned seed;
     vector<int> genes;
-    for(int i=0; i<size; i++){
+    for(int i=0; i<chromosomeSize; i++){
         genes.push_back(i);
     }
-    for(int i=0; i<size; i++){
-        // Tworzenie populacji początkowej za pomocą funkcji shuffle
+    for(int i=0; i<populationSize; i++){
         seed = std::chrono::system_clock::now().time_since_epoch().count();
         shuffle(genes.begin()+1, genes.end(), default_random_engine(seed));
-        Chromosome chromosome{genes};
-        chromosome.calcValue(matrix);
+        Chromosome chromosome{genes, matrix};
         population.push_back(chromosome);
     }
+    sort(population.begin(), population.end());
 }
 
-void Genetic::rankPopulation() {
-    int factor = 0;
-    for(int i=0; i<population.size(); i++)
-        factor += population[i]._value;
-    for(int i=0; i<population.size(); i++)
-        population[i].calcFitness(factor);
-    sort(population.begin(), population.end(), [](Chromosome& a, Chromosome& b) -> bool{
-        return a._value > b._value;
-    });
+Chromosome Genetic::tournamentSelection(int tournamentSize) {
+    uniform_real_distribution<double> randomInt(0,population.size() - 1);
+    int random = randomInt(generator);
+    int min = population[random].value();
+    int minIndex = random;
+    for (int j = 0; j < tournamentSize - 1; j++) {
+        random = randomInt(generator);
+        if (population[random].value() < min) {
+            min = population[random].value();
+            minIndex = random;
+        }
+    }
+    return population[minIndex];
+}
+
+void Genetic::nextGenerationTournament(int eliteSize, int tournamentSize, double mutationRate) {
+    vector<Chromosome> nextGeneration;
+    for(int i=0; i<eliteSize; i += 2) {
+        crossover(population[i], population[i + 1]);
+        mutate(mutationRate, population[i]);
+        mutate(mutationRate, population[i + 1]);
+        population[i].calcValue(matrix);
+        population[i + 1].calcValue(matrix);
+        nextGeneration.push_back(population[i]);
+        nextGeneration.push_back(population[i + 1]);
+    }
+    for(int i=0; i<(population.size() - eliteSize)/2; i++) {
+        Chromosome first = tournamentSelection(tournamentSize);
+        Chromosome second = tournamentSelection(tournamentSize);
+        crossover(first, second);
+        mutate(mutationRate, first);
+        mutate(mutationRate, second);
+        first.calcValue(matrix);
+        second.calcValue(matrix);
+        nextGeneration.push_back(first);
+        nextGeneration.push_back(second);
+    }
+    population = nextGeneration;
 }
 
 void Genetic::rankSelection(int eliteSize) {
+    uniform_real_distribution<double> distribution(0.0,1.0);
     int factor = 0;
     double range = 0;
     vector<double> ranges;
     vector<Chromosome> pool;
-    rankPopulation();
     for(int i=0; i<population.size(); i++)
         factor += i+1;
     for(int i=0; i<population.size(); i++){
@@ -74,34 +133,13 @@ void Genetic::rankSelection(int eliteSize) {
     population = pool;
 }
 
-void Genetic::crossover() {
-    srand(time(NULL));
-    int start, end;
-    int chromosomeSize = population[0].genes.size();
-    vector<int> offspring;
-    vector<Chromosome> offsprings;
-    for(int i=0; i<population.size(); i++) {
-        start = rand() % (population.size() - 2)+1;
-        end = rand() % (population.size() - start) + start;
-        offspring.push_back(0);
-        for(int j=1; j<chromosomeSize; j++)
-            if (!findInRange(population[i], population[chromosomeSize - 1 - i], start, end, j))
-                offspring.push_back(population[chromosomeSize - 1 - i].genes[j]);
-        if(offspring.size() == start)
-            for(int k=start; k<=end; k++)
-                offspring.push_back(population[i].genes[k]);
-        else
-            for(int k=start; k<=end; k++)
-                offspring.insert(offspring.begin()+k, population[i].genes[k]);
-        Chromosome chromosome{offspring};
-        offsprings.push_back(chromosome);
-        offspring.clear();
+Chromosome Genetic::geneticAlgorithm(int populationSize, int chromosomeSize, int eliteSize, int tournamentSize, double mutationRate, int generations){
+    initializePopulation(populationSize, chromosomeSize);
+    for(int i=0; i<generations; i++){
+        nextGenerationTournament(eliteSize, tournamentSize, mutationRate);
+        sort(population.begin(), population.end());
     }
-    population = offsprings;
-}
-
-void Genetic::mutate() {
-
+    return population[0];
 }
 
 void Genetic::printPopulation() const{
