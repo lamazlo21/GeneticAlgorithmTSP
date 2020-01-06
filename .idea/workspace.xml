@@ -11,7 +11,27 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c83f422-af3e-4d1b-aa61-2d3d6b4b9063" name="Default Changelist" comment="" />
+    <list default="true" id="5c83f422-af3e-4d1b-aa61-2d3d6b4b9063" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chromosome.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Chromosome.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chromosome.h" beforeDir="false" afterPath="$PROJECT_DIR$/Chromosome.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticAlgorithm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticAlgorithm.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GeneticAlgorithm.h" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticAlgorithm.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir/Chromosome.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir/Chromosome.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir/GeneticAlgorithm.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir/GeneticAlgorithm.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/geneticAlgorithm.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/geneticAlgorithm" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/geneticAlgorithm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +41,11 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1VYp2WcxVNRt0gJKBOEniitFn2y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -29,7 +53,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="geneticAlgorithm" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="geneticAlgorithm" TARGET_NAME="geneticAlgorithm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="geneticAlgorithm" RUN_TARGET_NAME="geneticAlgorithm">
@@ -63,6 +89,13 @@
       <workItem from="1577439677501" duration="534000" />
       <workItem from="1577553053015" duration="7739000" />
       <workItem from="1577692911664" duration="35554000" />
+      <workItem from="1577796033366" duration="3370000" />
+      <workItem from="1577802610124" duration="515000" />
+      <workItem from="1577903010842" duration="247000" />
+      <workItem from="1578007885086" duration="39000" />
+      <workItem from="1578218892736" duration="4508000" />
+      <workItem from="1578226282419" duration="18298000" />
+      <workItem from="1578344005431" duration="3903000" />
     </task>
     <servers />
   </component>
@@ -78,25 +111,50 @@
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="460" y="140" width="424" height="513" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1577734268122" />
-    <state width="1320" height="63" key="GridCell.Tab.0.bottom" timestamp="1577756966331">
+    <state width="1874" height="120" key="GridCell.Tab.0.bottom" timestamp="1578349990456">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1320" height="120" key="GridCell.Tab.0.bottom/0.27.1366.741/1366.0.1920.1080@0.27.1366.741" timestamp="1578349305438" />
+    <state width="1874" height="120" key="GridCell.Tab.0.bottom/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1578349990456" />
+    <state width="1320" height="219" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1578278460375" />
+    <state width="1874" height="120" key="GridCell.Tab.0.center" timestamp="1578349990456">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1320" height="120" key="GridCell.Tab.0.center/0.27.1366.741/1366.0.1920.1080@0.27.1366.741" timestamp="1578349305438" />
+    <state width="1874" height="120" key="GridCell.Tab.0.center/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1578349990456" />
+    <state width="1320" height="219" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1578278460374" />
+    <state width="1874" height="120" key="GridCell.Tab.0.left" timestamp="1578349990456">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1320" height="120" key="GridCell.Tab.0.left/0.27.1366.741/1366.0.1920.1080@0.27.1366.741" timestamp="1578349305438" />
+    <state width="1874" height="120" key="GridCell.Tab.0.left/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1578349990456" />
+    <state width="1320" height="219" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1578278460373" />
+    <state width="1874" height="120" key="GridCell.Tab.0.right" timestamp="1578349990456">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1320" height="120" key="GridCell.Tab.0.right/0.27.1366.741/1366.0.1920.1080@0.27.1366.741" timestamp="1578349305438" />
+    <state width="1874" height="120" key="GridCell.Tab.0.right/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1578349990456" />
+    <state width="1320" height="219" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1578278460375" />
+    <state width="1320" height="219" key="GridCell.Tab.1.bottom" timestamp="1578278460377">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="63" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1577756966331" />
-    <state width="1320" height="63" key="GridCell.Tab.0.center" timestamp="1577756966331">
+    <state width="1320" height="219" key="GridCell.Tab.1.bottom/0.27.1366.741@0.27.1366.741" timestamp="1578278460377" />
+    <state width="1320" height="219" key="GridCell.Tab.1.center" timestamp="1578278460376">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="63" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1577756966331" />
-    <state width="1320" height="63" key="GridCell.Tab.0.left" timestamp="1577756966331">
+    <state width="1320" height="219" key="GridCell.Tab.1.center/0.27.1366.741@0.27.1366.741" timestamp="1578278460376" />
+    <state width="1320" height="219" key="GridCell.Tab.1.left" timestamp="1578278460376">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="63" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1577756966331" />
-    <state width="1320" height="63" key="GridCell.Tab.0.right" timestamp="1577756966331">
+    <state width="1320" height="219" key="GridCell.Tab.1.left/0.27.1366.741@0.27.1366.741" timestamp="1578278460376" />
+    <state width="1320" height="219" key="GridCell.Tab.1.right" timestamp="1578278460376">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state width="1320" height="63" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1577756966331" />
-    <state x="547" y="269" key="com.intellij.ide.util.TipDialog" timestamp="1577692914757">
+    <state width="1320" height="219" key="GridCell.Tab.1.right/0.27.1366.741@0.27.1366.741" timestamp="1578278460376" />
+    <state x="547" y="269" key="com.intellij.ide.util.TipDialog" timestamp="1578344006568">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="547" y="269" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1577692914757" />
+    <state x="547" y="269" key="com.intellij.ide.util.TipDialog/0.27.1366.741/1366.0.1920.1080@0.27.1366.741" timestamp="1578344006568" />
+    <state x="547" y="269" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1578226283276" />
   </component>
 </project>
